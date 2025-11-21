@@ -7,9 +7,9 @@ public class Product {
 
     public Product() {}
 
-    public Product(String name, boolean status) {
+    public Product(String name) {
         this.name = name;
-        this.status = status;
+        this.status = true;
     }
 
     public Integer getCode() { return code; }

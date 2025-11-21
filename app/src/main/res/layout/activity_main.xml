@@ -7,26 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ProductsActivity">
 
-    <Button
-        android:id="@+id/logOutBttn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:text="Cerrar sesion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/newProductBttn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="Crear nuevo producto"
-        app:layout_constraintBottom_toTopOf="@+id/logOutBttn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -34,46 +14,46 @@
         android:layout_marginTop="35dp"
         android:text="Productos"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:id="@+id/listViewProducts"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productsView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="15dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/productNameField"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/productCreateButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <EditText
-        android:id="@+id/productNameField"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/productCreateButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:hint="Nombre del producto"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/productStatus"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#4CAF50"
+        app:layout_constraintBottom_toTopOf="@+id/logOutButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/outline_add_card_24" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/productStatus"
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/logOutButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:checkable="true"
-        android:text="Estatus"
-        app:layout_constraintBottom_toTopOf="@+id/newProductBttn"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#E91E63"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/outline_account_circle_off_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

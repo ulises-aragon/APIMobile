@@ -13,8 +13,6 @@ import java.util.concurrent.TimeUnit;
 public class RetrofitClient {
 
     private static final String BASE_URL = "http://192.168.1.22:8085/api/v1/demoapirestdam235/";
-    // Note: 10.0.2.2 is for Android emulator to reach localhost
-    // For real device, use your computer's IP: "http://192.168.1.X:8085/..."
 
     private static RetrofitClient instance;
     private ApiService apiService;

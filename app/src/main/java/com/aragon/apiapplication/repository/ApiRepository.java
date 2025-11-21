@@ -2,6 +2,8 @@ package com.aragon.apiapplication.repository;
 
 import com.aragon.apiapplication.models.*;
 import com.aragon.apiapplication.network.*;
+import com.aragon.apiapplication.util.PageResponse;
+
 import java.util.List;
 import retrofit2.Call;
 
@@ -30,12 +32,22 @@ public class ApiRepository {
         return apiService.logout();
     }
 
-    public Call<List<Product>> getProducts() {
-        return apiService.getProducts();
+    public Call<PageResponse<Product>> getProducts(Integer page, Integer size, String search, String sort) {
+        return apiService.getProducts(page, size, search, sort);
     }
 
-    public Call<ProductResponse> createProduct(String name, boolean status) {
-        Product product = new Product(name, status);
+    public Call<ProductResponse> createProduct(String name) {
+        Product product = new Product(name);
         return apiService.createProduct(product);
     }
+
+    public Call<ProductResponse> updateProduct(Integer id, String name) {
+        Product product = new Product(name);
+        return apiService.updateProduct(id, product);
+    }
+
+    public Call<ProductResponse> deleteProduct(Integer id) {
+        return apiService.deleteProduct(id);
+    }
+
 }
